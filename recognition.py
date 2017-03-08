@@ -188,6 +188,7 @@ def get_answer(qzRanswer):
 def get_rec_Qrcode(handler, oss_data):
     result = DTK_linux.rec_QrCode(oss_data['raw_data0'], oss_data['width0'], oss_data['height0'],
                                   oss_data['raw_data1'], oss_data['width1'], oss_data['height1'])
+    logging.critical(u'result:{}'.format(result))
     mark = list()
     for index in range(0, len(result)):
         if result[index] == ',':

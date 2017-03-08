@@ -87,7 +87,7 @@ class MNSReader(object):
         if oss_data:
             try:
                 logging.critical(u'DTK:{}'.format(key))
-                logging.critical(u'oss_data:{}'.format(oss_data))
+                #logging.critical(u'oss_data:{}'.format(oss_data))
                 qr_code = get_rec_Qrcode(self, oss_data)
                 logging.critical(u'qr_code DTK:{}'.format(qr_code))
                 i = DTK_linux.init_CNN_model("DTK.prototxt", "DTK.caffemodel", "DTK.binaryproto")
