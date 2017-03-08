@@ -72,7 +72,8 @@ class MNSReader(object):
         req = pick_message(self)
         key = req['events'][0]['oss']['object']['key']
         logging.critical(u'events key:{}'.format(key))
-        if key == 'test_connect' or key[-5] == '0':
+        #if key == 'test_connect' or key[-5] == '0':
+        if key == 'test_connect':
             self.pop()
             return
         else:
