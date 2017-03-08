@@ -88,6 +88,7 @@ class MNSReader(object):
                 i = DTK_linux.init_CNN_model("DTK.prototxt", "DTK.caffemodel", "DTK.binaryproto")
                 json_info1, json_info2 = get_json_info(self, qr_code)
                 insert_result(self, json_info1, json_info2, oss_data, qr_code)
+                logging.info(u'success DTK:{}'.format(key))
             except:
                 logging.fatal(u'fail DTK:{}'.format(key))
             self.pop()
