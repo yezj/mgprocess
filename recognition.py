@@ -198,6 +198,7 @@ def get_rec_Qrcode(handler, oss_data):
         'cid': result[:mark[0]],
         'book_paper_id': ObjectId(result[:mark[0]]),
     }
+    logging.critical(u'detail:{}'.format(detail))
     return detail
 
 
