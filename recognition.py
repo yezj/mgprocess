@@ -230,7 +230,7 @@ def get_details(handler, qzR, book_paper_id, dis_page, key):
                     img_path = u'{}_{}_{}.jpg'.format(book_paper_id, dis_page, i)
                     img.save(u'{}_{}_{}.jpg'.format(book_paper_id, dis_page, i))
                     handler.bucket.put_object_from_file(oss_file_path, img_path)
-                    os.remove(img_path)
+                    #os.remove(img_path)
                     oss_file_path = handler.oss_img_path + oss_file_path
                 except:
                     logging.info(u'upload img fail:{}'.format(oss_file_path))
