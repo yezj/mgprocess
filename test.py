@@ -52,5 +52,5 @@ for i in range(0, result.size()):
             print 'img wrong'
         print '------------------next--------------------'
 
-result[0].getfree(0)#free result:result[num].getfree(num)
-result[1].getfree(1)
+# result[0].getfree(0)#free result:result[num].getfree(num)
+# result[1].getfree(1)
