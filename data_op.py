@@ -3,6 +3,7 @@
 
 import time
 import copy
+import logging
 from bson import ObjectId
 import hashlib
 
@@ -101,4 +102,5 @@ def save_scan_data(db, batch_id, source_img, back_img, dis_student_number, dis_s
         scan_data['dis_code'] = '1111'
     scan_data['dis_detail_flag'] = tmp_str
     scan_data['dis_detail_md5'] = gen_md5(tmp_str)
+    logging.critical('scan_data {}'.format(scan_data))
     db.scan_datas.insert(scan_data)
