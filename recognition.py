@@ -252,6 +252,7 @@ def get_details(handler, qzR, book_paper_id, dis_page, key):
 
 
 def insert_result(handler, layout1, layout2, oss_data, qr_code):
+    print 'db', handler.db[1]
     result = DTK_linux.getSegRecResult2(layout1, layout2,
                                         oss_data['raw_data0'], oss_data['width0'], oss_data['height0'],
                                         oss_data['raw_data1'], oss_data['width1'], oss_data['height1'])

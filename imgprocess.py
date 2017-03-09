@@ -73,7 +73,6 @@ class MNSReader(object):
         key = req['events'][0]['oss']['object']['key']
         logging.critical(u'events key:{}'.format(key))
         if key == 'test_connect' or key[-5] == '1' or '/' in key:
-        #if key == 'test_connect':
             self.pop()
             return
         else:
@@ -87,7 +86,6 @@ class MNSReader(object):
         if oss_data:
             try:
                 logging.critical(u'DTK:{}'.format(key))
-                #logging.critical(u'oss_data:{}'.format(oss_data))
                 qr_code = get_rec_Qrcode(self, oss_data)
                 logging.critical(u'qr_code DTK:{}'.format(qr_code))
                 i = DTK_linux.init_CNN_model("DTK.prototxt", "DTK.caffemodel", "DTK.binaryproto")
