@@ -1,6 +1,5 @@
 import cv2
 import cv2.cv as cv
-import DTK_linux
 from DTK_linux import init_CNN_model, getSegRecResult2
 
 img1 = cv2.cv.LoadImage('test2_0.jpg', 0)
