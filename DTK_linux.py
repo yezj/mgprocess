@@ -8,9 +8,11 @@
 import cv2.cv as cv
 import cv2
 import os
+
 os.environ['GLOG_minloglevel'] = '2'
 from sys import version_info
-if version_info >= (2,6,0):
+
+if version_info >= (2, 6, 0):
     def swig_import_helper():
         from os.path import dirname
         import imp
@@ -26,6 +28,8 @@ if version_info >= (2,6,0):
             finally:
                 fp.close()
             return _mod
+
+
     _DTK_linux = swig_import_helper()
     del swig_import_helper
 else:
@@ -34,39 +38,50 @@ del version_info
 try:
     _swig_property = property
 except NameError:
-    pass # Python < 2.2 doesn't have 'property'.
-def _swig_setattr_nondynamic(self,class_type,name,value,static=1):
+    pass  # Python < 2.2 doesn't have 'property'.
+
+
+def _swig_setattr_nondynamic(self, class_type, name, value, static=1):
     if (name == "thisown"): return self.this.own(value)
     if (name == "this"):
         if type(value).__name__ == 'SwigPyObject':
             self.__dict__[name] = value
             return
-    method = class_type.__swig_setmethods__.get(name,None)
-    if method: return method(self,value)
+    method = class_type.__swig_setmethods__.get(name, None)
+    if method: return method(self, value)
     if (not static):
         self.__dict__[name] = value
     else:
         raise AttributeError("You cannot add attributes to %s" % self)
 
-def _swig_setattr(self,class_type,name,value):
-    return _swig_setattr_nondynamic(self,class_type,name,value,0)
 
-def _swig_getattr(self,class_type,name):
+def _swig_setattr(self, class_type, name, value):
+    return _swig_setattr_nondynamic(self, class_type, name, value, 0)
+
+
+def _swig_getattr(self, class_type, name):
     if (name == "thisown"): return self.this.own()
-    method = class_type.__swig_getmethods__.get(name,None)
+    method = class_type.__swig_getmethods__.get(name, None)
     if method: return method(self)
     raise AttributeError(name)
 
+
 def _swig_repr(self):
-    try: strthis = "proxy of " + self.this.__repr__()
-    except: strthis = ""
+    try:
+        strthis = "proxy of " + self.this.__repr__()
+    except:
+        strthis = ""
     return "<%s.%s; %s >" % (self.__class__.__module__, self.__class__.__name__, strthis,)
+
 
 try:
     _object = object
     _newclass = 1
 except AttributeError:
-    class _object : pass
+    class _object:
+        pass
+
+
     _newclass = 0
 
 
@@ -75,29 +90,51 @@ class SwigPyIterator(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, SwigPyIterator, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, SwigPyIterator, name)
+
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+
     __repr__ = _swig_repr
     __swig_destroy__ = _DTK_linux.delete_SwigPyIterator
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
     def value(self): return _DTK_linux.SwigPyIterator_value(self)
+
     def incr(self, n=1): return _DTK_linux.SwigPyIterator_incr(self, n)
+
     def decr(self, n=1): return _DTK_linux.SwigPyIterator_decr(self, n)
+
     def distance(self, *args): return _DTK_linux.SwigPyIterator_distance(self, *args)
+
     def equal(self, *args): return _DTK_linux.SwigPyIterator_equal(self, *args)
+
     def copy(self): return _DTK_linux.SwigPyIterator_copy(self)
+
     def next(self): return _DTK_linux.SwigPyIterator_next(self)
+
     def __next__(self): return _DTK_linux.SwigPyIterator___next__(self)
+
     def previous(self): return _DTK_linux.SwigPyIterator_previous(self)
+
     def advance(self, *args): return _DTK_linux.SwigPyIterator_advance(self, *args)
+
     def __eq__(self, *args): return _DTK_linux.SwigPyIterator___eq__(self, *args)
+
     def __ne__(self, *args): return _DTK_linux.SwigPyIterator___ne__(self, *args)
+
     def __iadd__(self, *args): return _DTK_linux.SwigPyIterator___iadd__(self, *args)
+
     def __isub__(self, *args): return _DTK_linux.SwigPyIterator___isub__(self, *args)
+
     def __add__(self, *args): return _DTK_linux.SwigPyIterator___add__(self, *args)
+
     def __sub__(self, *args): return _DTK_linux.SwigPyIterator___sub__(self, *args)
+
     def __iter__(self): return self
+
+
 SwigPyIterator_swigregister = _DTK_linux.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
+
 
 class ImgData(_object):
     __swig_setmethods__ = {}
@@ -107,18 +144,25 @@ class ImgData(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["type"] = _DTK_linux.ImgData_type_set
     __swig_getmethods__["type"] = _DTK_linux.ImgData_type_get
-    if _newclass:type = _swig_property(_DTK_linux.ImgData_type_get, _DTK_linux.ImgData_type_set)
+    if _newclass: type = _swig_property(_DTK_linux.ImgData_type_get, _DTK_linux.ImgData_type_set)
     __swig_setmethods__["buffer"] = _DTK_linux.ImgData_buffer_set
     __swig_getmethods__["buffer"] = _DTK_linux.ImgData_buffer_get
-    if _newclass:buffer = _swig_property(_DTK_linux.ImgData_buffer_get, _DTK_linux.ImgData_buffer_set)
-    def __init__(self): 
+    if _newclass: buffer = _swig_property(_DTK_linux.ImgData_buffer_get, _DTK_linux.ImgData_buffer_set)
+
+    def __init__(self):
         this = _DTK_linux.new_ImgData()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_ImgData
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 ImgData_swigregister = _DTK_linux.ImgData_swigregister
 ImgData_swigregister(ImgData)
+
 
 class _CvRect(_object):
     __swig_setmethods__ = {}
@@ -128,29 +172,36 @@ class _CvRect(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["x"] = _DTK_linux._CvRect_x_set
     __swig_getmethods__["x"] = _DTK_linux._CvRect_x_get
-    if _newclass:x = _swig_property(_DTK_linux._CvRect_x_get, _DTK_linux._CvRect_x_set)
+    if _newclass: x = _swig_property(_DTK_linux._CvRect_x_get, _DTK_linux._CvRect_x_set)
     __swig_setmethods__["y"] = _DTK_linux._CvRect_y_set
     __swig_getmethods__["y"] = _DTK_linux._CvRect_y_get
-    if _newclass:y = _swig_property(_DTK_linux._CvRect_y_get, _DTK_linux._CvRect_y_set)
+    if _newclass: y = _swig_property(_DTK_linux._CvRect_y_get, _DTK_linux._CvRect_y_set)
     __swig_setmethods__["width"] = _DTK_linux._CvRect_width_set
     __swig_getmethods__["width"] = _DTK_linux._CvRect_width_get
-    if _newclass:width = _swig_property(_DTK_linux._CvRect_width_get, _DTK_linux._CvRect_width_set)
+    if _newclass: width = _swig_property(_DTK_linux._CvRect_width_get, _DTK_linux._CvRect_width_set)
     __swig_setmethods__["height"] = _DTK_linux._CvRect_height_set
     __swig_getmethods__["height"] = _DTK_linux._CvRect_height_get
-    if _newclass:height = _swig_property(_DTK_linux._CvRect_height_get, _DTK_linux._CvRect_height_set)
-    if _newclass:height = _swig_property(_DTK_linux._CvRect_height_get, _DTK_linux._CvRect_height_set)
-    def __init__(self,x,y,width,height):
+    if _newclass: height = _swig_property(_DTK_linux._CvRect_height_get, _DTK_linux._CvRect_height_set)
+    if _newclass: height = _swig_property(_DTK_linux._CvRect_height_get, _DTK_linux._CvRect_height_set)
+
+    def __init__(self, x, y, width, height):
         this = _DTK_linux.new__CvRect()
-        try: self.this.append(this)
-        except: self.this = this
-	self.x = x;
-	self.y = y;
-	self.width = width;
-	self.height = height;
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+        self.x = x;
+        self.y = y;
+        self.width = width;
+        self.height = height;
+
     __swig_destroy__ = _DTK_linux.delete__CvRect
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 _CvRect_swigregister = _DTK_linux._CvRect_swigregister
 _CvRect_swigregister(_CvRect)
+
 
 class qzones(_object):
     __swig_setmethods__ = {}
@@ -160,21 +211,28 @@ class qzones(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["type"] = _DTK_linux.qzones_type_set
     __swig_getmethods__["type"] = _DTK_linux.qzones_type_get
-    if _newclass:type = _swig_property(_DTK_linux.qzones_type_get, _DTK_linux.qzones_type_set)
+    if _newclass: type = _swig_property(_DTK_linux.qzones_type_get, _DTK_linux.qzones_type_set)
     __swig_setmethods__["qzone"] = _DTK_linux.qzones_qzone_set
     __swig_getmethods__["qzone"] = _DTK_linux.qzones_qzone_get
-    if _newclass:qzone = _swig_property(_DTK_linux.qzones_qzone_get, _DTK_linux.qzones_qzone_set)
+    if _newclass: qzone = _swig_property(_DTK_linux.qzones_qzone_get, _DTK_linux.qzones_qzone_set)
     __swig_setmethods__["scorezones"] = _DTK_linux.qzones_scorezones_set
     __swig_getmethods__["scorezones"] = _DTK_linux.qzones_scorezones_get
-    if _newclass:scorezones = _swig_property(_DTK_linux.qzones_scorezones_get, _DTK_linux.qzones_scorezones_set)
-    def __init__(self): 
+    if _newclass: scorezones = _swig_property(_DTK_linux.qzones_scorezones_get, _DTK_linux.qzones_scorezones_set)
+
+    def __init__(self):
         this = _DTK_linux.new_qzones()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_qzones
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 qzones_swigregister = _DTK_linux.qzones_swigregister
 qzones_swigregister(qzones)
+
 
 class pageone(_object):
     __swig_setmethods__ = {}
@@ -184,24 +242,31 @@ class pageone(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["cid"] = _DTK_linux.pageone_cid_set
     __swig_getmethods__["cid"] = _DTK_linux.pageone_cid_get
-    if _newclass:cid = _swig_property(_DTK_linux.pageone_cid_get, _DTK_linux.pageone_cid_set)
+    if _newclass: cid = _swig_property(_DTK_linux.pageone_cid_get, _DTK_linux.pageone_cid_set)
     __swig_setmethods__["num"] = _DTK_linux.pageone_num_set
     __swig_getmethods__["num"] = _DTK_linux.pageone_num_get
-    if _newclass:num = _swig_property(_DTK_linux.pageone_num_get, _DTK_linux.pageone_num_set)
+    if _newclass: num = _swig_property(_DTK_linux.pageone_num_get, _DTK_linux.pageone_num_set)
     __swig_setmethods__["no"] = _DTK_linux.pageone_no_set
     __swig_getmethods__["no"] = _DTK_linux.pageone_no_get
-    if _newclass:no = _swig_property(_DTK_linux.pageone_no_get, _DTK_linux.pageone_no_set)
+    if _newclass: no = _swig_property(_DTK_linux.pageone_no_get, _DTK_linux.pageone_no_set)
     __swig_setmethods__["qz"] = _DTK_linux.pageone_qz_set
     __swig_getmethods__["qz"] = _DTK_linux.pageone_qz_get
-    if _newclass:qz = _swig_property(_DTK_linux.pageone_qz_get, _DTK_linux.pageone_qz_set)
-    def __init__(self): 
+    if _newclass: qz = _swig_property(_DTK_linux.pageone_qz_get, _DTK_linux.pageone_qz_set)
+
+    def __init__(self):
         this = _DTK_linux.new_pageone()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_pageone
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 pageone_swigregister = _DTK_linux.pageone_swigregister
 pageone_swigregister(pageone)
+
 
 class pic(_object):
     __swig_setmethods__ = {}
@@ -211,21 +276,28 @@ class pic(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["buffer"] = _DTK_linux.pic_buffer_set
     __swig_getmethods__["buffer"] = _DTK_linux.pic_buffer_get
-    if _newclass:buffer = _swig_property(_DTK_linux.pic_buffer_get, _DTK_linux.pic_buffer_set)
+    if _newclass: buffer = _swig_property(_DTK_linux.pic_buffer_get, _DTK_linux.pic_buffer_set)
     __swig_setmethods__["width"] = _DTK_linux.pic_width_set
     __swig_getmethods__["width"] = _DTK_linux.pic_width_get
-    if _newclass:width = _swig_property(_DTK_linux.pic_width_get, _DTK_linux.pic_width_set)
+    if _newclass: width = _swig_property(_DTK_linux.pic_width_get, _DTK_linux.pic_width_set)
     __swig_setmethods__["height"] = _DTK_linux.pic_height_set
     __swig_getmethods__["height"] = _DTK_linux.pic_height_get
-    if _newclass:height = _swig_property(_DTK_linux.pic_height_get, _DTK_linux.pic_height_set)
-    def __init__(self): 
+    if _newclass: height = _swig_property(_DTK_linux.pic_height_get, _DTK_linux.pic_height_set)
+
+    def __init__(self):
         this = _DTK_linux.new_pic()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_pic
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 pic_swigregister = _DTK_linux.pic_swigregister
 pic_swigregister(pic)
+
 
 class qzonesResult(_object):
     __swig_setmethods__ = {}
@@ -235,27 +307,34 @@ class qzonesResult(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["no"] = _DTK_linux.qzonesResult_no_set
     __swig_getmethods__["no"] = _DTK_linux.qzonesResult_no_get
-    if _newclass:no = _swig_property(_DTK_linux.qzonesResult_no_get, _DTK_linux.qzonesResult_no_set)
+    if _newclass: no = _swig_property(_DTK_linux.qzonesResult_no_get, _DTK_linux.qzonesResult_no_set)
     __swig_setmethods__["type"] = _DTK_linux.qzonesResult_type_set
     __swig_getmethods__["type"] = _DTK_linux.qzonesResult_type_get
-    if _newclass:type = _swig_property(_DTK_linux.qzonesResult_type_get, _DTK_linux.qzonesResult_type_set)
+    if _newclass: type = _swig_property(_DTK_linux.qzonesResult_type_get, _DTK_linux.qzonesResult_type_set)
     __swig_setmethods__["answer"] = _DTK_linux.qzonesResult_answer_set
     __swig_getmethods__["answer"] = _DTK_linux.qzonesResult_answer_get
-    if _newclass:answer = _swig_property(_DTK_linux.qzonesResult_answer_get, _DTK_linux.qzonesResult_answer_set)
+    if _newclass: answer = _swig_property(_DTK_linux.qzonesResult_answer_get, _DTK_linux.qzonesResult_answer_set)
     __swig_setmethods__["score"] = _DTK_linux.qzonesResult_score_set
     __swig_getmethods__["score"] = _DTK_linux.qzonesResult_score_get
-    if _newclass:score = _swig_property(_DTK_linux.qzonesResult_score_get, _DTK_linux.qzonesResult_score_set)
+    if _newclass: score = _swig_property(_DTK_linux.qzonesResult_score_get, _DTK_linux.qzonesResult_score_set)
     __swig_setmethods__["qzone"] = _DTK_linux.qzonesResult_qzone_set
     __swig_getmethods__["qzone"] = _DTK_linux.qzonesResult_qzone_get
-    if _newclass:qzone = _swig_property(_DTK_linux.qzonesResult_qzone_get, _DTK_linux.qzonesResult_qzone_set)
-    def __init__(self): 
+    if _newclass: qzone = _swig_property(_DTK_linux.qzonesResult_qzone_get, _DTK_linux.qzonesResult_qzone_set)
+
+    def __init__(self):
         this = _DTK_linux.new_qzonesResult()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_qzonesResult
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 qzonesResult_swigregister = _DTK_linux.qzonesResult_swigregister
 qzonesResult_swigregister(qzonesResult)
+
 
 class pageoneResult(_object):
     __swig_setmethods__ = {}
@@ -265,97 +344,190 @@ class pageoneResult(_object):
     __repr__ = _swig_repr
     __swig_setmethods__["cid"] = _DTK_linux.pageoneResult_cid_set
     __swig_getmethods__["cid"] = _DTK_linux.pageoneResult_cid_get
-    if _newclass:cid = _swig_property(_DTK_linux.pageoneResult_cid_get, _DTK_linux.pageoneResult_cid_set)
+    if _newclass: cid = _swig_property(_DTK_linux.pageoneResult_cid_get, _DTK_linux.pageoneResult_cid_set)
     __swig_setmethods__["num"] = _DTK_linux.pageoneResult_num_set
     __swig_getmethods__["num"] = _DTK_linux.pageoneResult_num_get
-    if _newclass:num = _swig_property(_DTK_linux.pageoneResult_num_get, _DTK_linux.pageoneResult_num_set)
+    if _newclass: num = _swig_property(_DTK_linux.pageoneResult_num_get, _DTK_linux.pageoneResult_num_set)
     __swig_setmethods__["no"] = _DTK_linux.pageoneResult_no_set
     __swig_getmethods__["no"] = _DTK_linux.pageoneResult_no_get
-    if _newclass:no = _swig_property(_DTK_linux.pageoneResult_no_get, _DTK_linux.pageoneResult_no_set)
+    if _newclass: no = _swig_property(_DTK_linux.pageoneResult_no_get, _DTK_linux.pageoneResult_no_set)
     __swig_setmethods__["student"] = _DTK_linux.pageoneResult_student_set
     __swig_getmethods__["student"] = _DTK_linux.pageoneResult_student_get
-    if _newclass:student = _swig_property(_DTK_linux.pageoneResult_student_get, _DTK_linux.pageoneResult_student_set)
+    if _newclass: student = _swig_property(_DTK_linux.pageoneResult_student_get, _DTK_linux.pageoneResult_student_set)
     __swig_setmethods__["status"] = _DTK_linux.pageoneResult_status_set
     __swig_getmethods__["status"] = _DTK_linux.pageoneResult_status_get
-    if _newclass:status = _swig_property(_DTK_linux.pageoneResult_status_get, _DTK_linux.pageoneResult_status_set)
+    if _newclass: status = _swig_property(_DTK_linux.pageoneResult_status_get, _DTK_linux.pageoneResult_status_set)
     __swig_setmethods__["qzR"] = _DTK_linux.pageoneResult_qzR_set
     __swig_getmethods__["qzR"] = _DTK_linux.pageoneResult_qzR_get
-    if _newclass:qzR = _swig_property(_DTK_linux.pageoneResult_qzR_get, _DTK_linux.pageoneResult_qzR_set)
-    def __init__(self): 
+    if _newclass: qzR = _swig_property(_DTK_linux.pageoneResult_qzR_get, _DTK_linux.pageoneResult_qzR_set)
+
+    def __init__(self):
         this = _DTK_linux.new_pageoneResult()
-        try: self.this.append(this)
-        except: self.this = this
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
     __swig_destroy__ = _DTK_linux.delete_pageoneResult
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 pageoneResult_swigregister = _DTK_linux.pageoneResult_swigregister
 pageoneResult_swigregister(pageoneResult)
 
 
 def segImgData(*args):
-  return _DTK_linux.segImgData(*args)
+    return _DTK_linux.segImgData(*args)
+
+
 segImgData = _DTK_linux.segImgData
 
+
 def rec_QrCode(*args):
-  return _DTK_linux.rec_QrCode(*args)
+    return _DTK_linux.rec_QrCode(*args)
+
+
 rec_QrCode = _DTK_linux.rec_QrCode
 
+
 def getSegRecResult1(*args):
-  return _DTK_linux.getSegRecResult1(*args)
+    return _DTK_linux.getSegRecResult1(*args)
+
+
 getSegRecResult1 = _DTK_linux.getSegRecResult1
 
+
 def getSegRecResult2(*args):
-  return _DTK_linux.getSegRecResult2(*args)
+    return _DTK_linux.getSegRecResult2(*args)
+
+
 getSegRecResult2 = _DTK_linux.getSegRecResult2
 
+
 def init_CNN_model(*args):
-  return _DTK_linux.init_CNN_model(*args)
+    return _DTK_linux.init_CNN_model(*args)
+
+
 init_CNN_model = _DTK_linux.init_CNN_model
+
+
 class RectVector(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, RectVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, RectVector, name)
     __repr__ = _swig_repr
-    def iterator(self): return _DTK_linux.RectVector_iterator(self)
-    def __iter__(self): return self.iterator()
-    def __nonzero__(self): return _DTK_linux.RectVector___nonzero__(self)
-    def __bool__(self): return _DTK_linux.RectVector___bool__(self)
-    def __len__(self): return _DTK_linux.RectVector___len__(self)
-    def pop(self): return _DTK_linux.RectVector_pop(self)
-    def __getslice__(self, *args): return _DTK_linux.RectVector___getslice__(self, *args)
-    def __setslice__(self, *args): return _DTK_linux.RectVector___setslice__(self, *args)
-    def __delslice__(self, *args): return _DTK_linux.RectVector___delslice__(self, *args)
-    def __delitem__(self, *args): return _DTK_linux.RectVector___delitem__(self, *args)
-    def __getitem__(self, *args): return _DTK_linux.RectVector___getitem__(self, *args)
-    def __setitem__(self, *args): return _DTK_linux.RectVector___setitem__(self, *args)
-    def append(self, *args): return _DTK_linux.RectVector_append(self, *args)
-    def empty(self): return _DTK_linux.RectVector_empty(self)
-    def size(self): return _DTK_linux.RectVector_size(self)
-    def clear(self): return _DTK_linux.RectVector_clear(self)
-    def swap(self, *args): return _DTK_linux.RectVector_swap(self, *args)
-    def get_allocator(self): return _DTK_linux.RectVector_get_allocator(self)
-    def begin(self): return _DTK_linux.RectVector_begin(self)
-    def end(self): return _DTK_linux.RectVector_end(self)
-    def rbegin(self): return _DTK_linux.RectVector_rbegin(self)
-    def rend(self): return _DTK_linux.RectVector_rend(self)
-    def pop_back(self): return _DTK_linux.RectVector_pop_back(self)
-    def erase(self, *args): return _DTK_linux.RectVector_erase(self, *args)
-    def __init__(self, *args): 
+
+    def iterator(self):
+        return _DTK_linux.RectVector_iterator(self)
+
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _DTK_linux.RectVector___nonzero__(self)
+
+    def __bool__(self):
+        return _DTK_linux.RectVector___bool__(self)
+
+    def __len__(self):
+        return _DTK_linux.RectVector___len__(self)
+
+    def pop(self):
+        return _DTK_linux.RectVector_pop(self)
+
+    def __getslice__(self, *args):
+        return _DTK_linux.RectVector___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        return _DTK_linux.RectVector___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        return _DTK_linux.RectVector___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        return _DTK_linux.RectVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _DTK_linux.RectVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _DTK_linux.RectVector___setitem__(self, *args)
+
+    def append(self, *args):
+        return _DTK_linux.RectVector_append(self, *args)
+
+    def empty(self):
+        return _DTK_linux.RectVector_empty(self)
+
+    def size(self):
+        return _DTK_linux.RectVector_size(self)
+
+    def clear(self):
+        return _DTK_linux.RectVector_clear(self)
+
+    def swap(self, *args):
+        return _DTK_linux.RectVector_swap(self, *args)
+
+    def get_allocator(self):
+        return _DTK_linux.RectVector_get_allocator(self)
+
+    def begin(self):
+        return _DTK_linux.RectVector_begin(self)
+
+    def end(self):
+        return _DTK_linux.RectVector_end(self)
+
+    def rbegin(self):
+        return _DTK_linux.RectVector_rbegin(self)
+
+    def rend(self):
+        return _DTK_linux.RectVector_rend(self)
+
+    def pop_back(self):
+        return _DTK_linux.RectVector_pop_back(self)
+
+    def erase(self, *args):
+        return _DTK_linux.RectVector_erase(self, *args)
+
+    def __init__(self, *args):
         this = _DTK_linux.new_RectVector(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def push_back(self, *args): return _DTK_linux.RectVector_push_back(self, *args)
-    def front(self): return _DTK_linux.RectVector_front(self)
-    def back(self): return _DTK_linux.RectVector_back(self)
-    def assign(self, *args): return _DTK_linux.RectVector_assign(self, *args)
-    def resize(self, *args): return _DTK_linux.RectVector_resize(self, *args)
-    def insert(self, *args): return _DTK_linux.RectVector_insert(self, *args)
-    def reserve(self, *args): return _DTK_linux.RectVector_reserve(self, *args)
-    def capacity(self): return _DTK_linux.RectVector_capacity(self)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def push_back(self, *args):
+        return _DTK_linux.RectVector_push_back(self, *args)
+
+    def front(self):
+        return _DTK_linux.RectVector_front(self)
+
+    def back(self):
+        return _DTK_linux.RectVector_back(self)
+
+    def assign(self, *args):
+        return _DTK_linux.RectVector_assign(self, *args)
+
+    def resize(self, *args):
+        return _DTK_linux.RectVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _DTK_linux.RectVector_insert(self, *args)
+
+    def reserve(self, *args):
+        return _DTK_linux.RectVector_reserve(self, *args)
+
+    def capacity(self):
+        return _DTK_linux.RectVector_capacity(self)
+
     __swig_destroy__ = _DTK_linux.delete_RectVector
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 RectVector_swigregister = _DTK_linux.RectVector_swigregister
 RectVector_swigregister(RectVector)
+
 
 class QzonesVector(_object):
     __swig_setmethods__ = {}
@@ -363,46 +535,117 @@ class QzonesVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, QzonesVector, name)
     __repr__ = _swig_repr
-    def iterator(self): return _DTK_linux.QzonesVector_iterator(self)
-    def __iter__(self): return self.iterator()
-    def __nonzero__(self): return _DTK_linux.QzonesVector___nonzero__(self)
-    def __bool__(self): return _DTK_linux.QzonesVector___bool__(self)
-    def __len__(self): return _DTK_linux.QzonesVector___len__(self)
-    def pop(self): return _DTK_linux.QzonesVector_pop(self)
-    def __getslice__(self, *args): return _DTK_linux.QzonesVector___getslice__(self, *args)
-    def __setslice__(self, *args): return _DTK_linux.QzonesVector___setslice__(self, *args)
-    def __delslice__(self, *args): return _DTK_linux.QzonesVector___delslice__(self, *args)
-    def __delitem__(self, *args): return _DTK_linux.QzonesVector___delitem__(self, *args)
-    def __getitem__(self, *args): return _DTK_linux.QzonesVector___getitem__(self, *args)
-    def __setitem__(self, *args): return _DTK_linux.QzonesVector___setitem__(self, *args)
-    def append(self, *args): return _DTK_linux.QzonesVector_append(self, *args)
-    def empty(self): return _DTK_linux.QzonesVector_empty(self)
-    def size(self): return _DTK_linux.QzonesVector_size(self)
-    def clear(self): return _DTK_linux.QzonesVector_clear(self)
-    def swap(self, *args): return _DTK_linux.QzonesVector_swap(self, *args)
-    def get_allocator(self): return _DTK_linux.QzonesVector_get_allocator(self)
-    def begin(self): return _DTK_linux.QzonesVector_begin(self)
-    def end(self): return _DTK_linux.QzonesVector_end(self)
-    def rbegin(self): return _DTK_linux.QzonesVector_rbegin(self)
-    def rend(self): return _DTK_linux.QzonesVector_rend(self)
-    def pop_back(self): return _DTK_linux.QzonesVector_pop_back(self)
-    def erase(self, *args): return _DTK_linux.QzonesVector_erase(self, *args)
-    def __init__(self, *args): 
+
+    def iterator(self):
+        return _DTK_linux.QzonesVector_iterator(self)
+
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _DTK_linux.QzonesVector___nonzero__(self)
+
+    def __bool__(self):
+        return _DTK_linux.QzonesVector___bool__(self)
+
+    def __len__(self):
+        return _DTK_linux.QzonesVector___len__(self)
+
+    def pop(self):
+        return _DTK_linux.QzonesVector_pop(self)
+
+    def __getslice__(self, *args):
+        return _DTK_linux.QzonesVector___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        return _DTK_linux.QzonesVector___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        return _DTK_linux.QzonesVector___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        return _DTK_linux.QzonesVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _DTK_linux.QzonesVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _DTK_linux.QzonesVector___setitem__(self, *args)
+
+    def append(self, *args):
+        return _DTK_linux.QzonesVector_append(self, *args)
+
+    def empty(self):
+        return _DTK_linux.QzonesVector_empty(self)
+
+    def size(self):
+        return _DTK_linux.QzonesVector_size(self)
+
+    def clear(self):
+        return _DTK_linux.QzonesVector_clear(self)
+
+    def swap(self, *args):
+        return _DTK_linux.QzonesVector_swap(self, *args)
+
+    def get_allocator(self):
+        return _DTK_linux.QzonesVector_get_allocator(self)
+
+    def begin(self):
+        return _DTK_linux.QzonesVector_begin(self)
+
+    def end(self):
+        return _DTK_linux.QzonesVector_end(self)
+
+    def rbegin(self):
+        return _DTK_linux.QzonesVector_rbegin(self)
+
+    def rend(self):
+        return _DTK_linux.QzonesVector_rend(self)
+
+    def pop_back(self):
+        return _DTK_linux.QzonesVector_pop_back(self)
+
+    def erase(self, *args):
+        return _DTK_linux.QzonesVector_erase(self, *args)
+
+    def __init__(self, *args):
         this = _DTK_linux.new_QzonesVector(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def push_back(self, *args): return _DTK_linux.QzonesVector_push_back(self, *args)
-    def front(self): return _DTK_linux.QzonesVector_front(self)
-    def back(self): return _DTK_linux.QzonesVector_back(self)
-    def assign(self, *args): return _DTK_linux.QzonesVector_assign(self, *args)
-    def resize(self, *args): return _DTK_linux.QzonesVector_resize(self, *args)
-    def insert(self, *args): return _DTK_linux.QzonesVector_insert(self, *args)
-    def reserve(self, *args): return _DTK_linux.QzonesVector_reserve(self, *args)
-    def capacity(self): return _DTK_linux.QzonesVector_capacity(self)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def push_back(self, *args):
+        return _DTK_linux.QzonesVector_push_back(self, *args)
+
+    def front(self):
+        return _DTK_linux.QzonesVector_front(self)
+
+    def back(self):
+        return _DTK_linux.QzonesVector_back(self)
+
+    def assign(self, *args):
+        return _DTK_linux.QzonesVector_assign(self, *args)
+
+    def resize(self, *args):
+        return _DTK_linux.QzonesVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _DTK_linux.QzonesVector_insert(self, *args)
+
+    def reserve(self, *args):
+        return _DTK_linux.QzonesVector_reserve(self, *args)
+
+    def capacity(self):
+        return _DTK_linux.QzonesVector_capacity(self)
+
     __swig_destroy__ = _DTK_linux.delete_QzonesVector
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 QzonesVector_swigregister = _DTK_linux.QzonesVector_swigregister
 QzonesVector_swigregister(QzonesVector)
+
 
 class PageoneVector(_object):
     __swig_setmethods__ = {}
@@ -410,46 +653,117 @@ class PageoneVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, PageoneVector, name)
     __repr__ = _swig_repr
-    def iterator(self): return _DTK_linux.PageoneVector_iterator(self)
-    def __iter__(self): return self.iterator()
-    def __nonzero__(self): return _DTK_linux.PageoneVector___nonzero__(self)
-    def __bool__(self): return _DTK_linux.PageoneVector___bool__(self)
-    def __len__(self): return _DTK_linux.PageoneVector___len__(self)
-    def pop(self): return _DTK_linux.PageoneVector_pop(self)
-    def __getslice__(self, *args): return _DTK_linux.PageoneVector___getslice__(self, *args)
-    def __setslice__(self, *args): return _DTK_linux.PageoneVector___setslice__(self, *args)
-    def __delslice__(self, *args): return _DTK_linux.PageoneVector___delslice__(self, *args)
-    def __delitem__(self, *args): return _DTK_linux.PageoneVector___delitem__(self, *args)
-    def __getitem__(self, *args): return _DTK_linux.PageoneVector___getitem__(self, *args)
-    def __setitem__(self, *args): return _DTK_linux.PageoneVector___setitem__(self, *args)
-    def append(self, *args): return _DTK_linux.PageoneVector_append(self, *args)
-    def empty(self): return _DTK_linux.PageoneVector_empty(self)
-    def size(self): return _DTK_linux.PageoneVector_size(self)
-    def clear(self): return _DTK_linux.PageoneVector_clear(self)
-    def swap(self, *args): return _DTK_linux.PageoneVector_swap(self, *args)
-    def get_allocator(self): return _DTK_linux.PageoneVector_get_allocator(self)
-    def begin(self): return _DTK_linux.PageoneVector_begin(self)
-    def end(self): return _DTK_linux.PageoneVector_end(self)
-    def rbegin(self): return _DTK_linux.PageoneVector_rbegin(self)
-    def rend(self): return _DTK_linux.PageoneVector_rend(self)
-    def pop_back(self): return _DTK_linux.PageoneVector_pop_back(self)
-    def erase(self, *args): return _DTK_linux.PageoneVector_erase(self, *args)
-    def __init__(self, *args): 
+
+    def iterator(self):
+        return _DTK_linux.PageoneVector_iterator(self)
+
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _DTK_linux.PageoneVector___nonzero__(self)
+
+    def __bool__(self):
+        return _DTK_linux.PageoneVector___bool__(self)
+
+    def __len__(self):
+        return _DTK_linux.PageoneVector___len__(self)
+
+    def pop(self):
+        return _DTK_linux.PageoneVector_pop(self)
+
+    def __getslice__(self, *args):
+        return _DTK_linux.PageoneVector___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        return _DTK_linux.PageoneVector___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        return _DTK_linux.PageoneVector___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        return _DTK_linux.PageoneVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _DTK_linux.PageoneVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _DTK_linux.PageoneVector___setitem__(self, *args)
+
+    def append(self, *args):
+        return _DTK_linux.PageoneVector_append(self, *args)
+
+    def empty(self):
+        return _DTK_linux.PageoneVector_empty(self)
+
+    def size(self):
+        return _DTK_linux.PageoneVector_size(self)
+
+    def clear(self):
+        return _DTK_linux.PageoneVector_clear(self)
+
+    def swap(self, *args):
+        return _DTK_linux.PageoneVector_swap(self, *args)
+
+    def get_allocator(self):
+        return _DTK_linux.PageoneVector_get_allocator(self)
+
+    def begin(self):
+        return _DTK_linux.PageoneVector_begin(self)
+
+    def end(self):
+        return _DTK_linux.PageoneVector_end(self)
+
+    def rbegin(self):
+        return _DTK_linux.PageoneVector_rbegin(self)
+
+    def rend(self):
+        return _DTK_linux.PageoneVector_rend(self)
+
+    def pop_back(self):
+        return _DTK_linux.PageoneVector_pop_back(self)
+
+    def erase(self, *args):
+        return _DTK_linux.PageoneVector_erase(self, *args)
+
+    def __init__(self, *args):
         this = _DTK_linux.new_PageoneVector(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def push_back(self, *args): return _DTK_linux.PageoneVector_push_back(self, *args)
-    def front(self): return _DTK_linux.PageoneVector_front(self)
-    def back(self): return _DTK_linux.PageoneVector_back(self)
-    def assign(self, *args): return _DTK_linux.PageoneVector_assign(self, *args)
-    def resize(self, *args): return _DTK_linux.PageoneVector_resize(self, *args)
-    def insert(self, *args): return _DTK_linux.PageoneVector_insert(self, *args)
-    def reserve(self, *args): return _DTK_linux.PageoneVector_reserve(self, *args)
-    def capacity(self): return _DTK_linux.PageoneVector_capacity(self)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def push_back(self, *args):
+        return _DTK_linux.PageoneVector_push_back(self, *args)
+
+    def front(self):
+        return _DTK_linux.PageoneVector_front(self)
+
+    def back(self):
+        return _DTK_linux.PageoneVector_back(self)
+
+    def assign(self, *args):
+        return _DTK_linux.PageoneVector_assign(self, *args)
+
+    def resize(self, *args):
+        return _DTK_linux.PageoneVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _DTK_linux.PageoneVector_insert(self, *args)
+
+    def reserve(self, *args):
+        return _DTK_linux.PageoneVector_reserve(self, *args)
+
+    def capacity(self):
+        return _DTK_linux.PageoneVector_capacity(self)
+
     __swig_destroy__ = _DTK_linux.delete_PageoneVector
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 PageoneVector_swigregister = _DTK_linux.PageoneVector_swigregister
 PageoneVector_swigregister(PageoneVector)
+
 
 class QzonesResultvector(_object):
     __swig_setmethods__ = {}
@@ -457,46 +771,117 @@ class QzonesResultvector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, QzonesResultvector, name)
     __repr__ = _swig_repr
-    def iterator(self): return _DTK_linux.QzonesResultvector_iterator(self)
-    def __iter__(self): return self.iterator()
-    def __nonzero__(self): return _DTK_linux.QzonesResultvector___nonzero__(self)
-    def __bool__(self): return _DTK_linux.QzonesResultvector___bool__(self)
-    def __len__(self): return _DTK_linux.QzonesResultvector___len__(self)
-    def pop(self): return _DTK_linux.QzonesResultvector_pop(self)
-    def __getslice__(self, *args): return _DTK_linux.QzonesResultvector___getslice__(self, *args)
-    def __setslice__(self, *args): return _DTK_linux.QzonesResultvector___setslice__(self, *args)
-    def __delslice__(self, *args): return _DTK_linux.QzonesResultvector___delslice__(self, *args)
-    def __delitem__(self, *args): return _DTK_linux.QzonesResultvector___delitem__(self, *args)
-    def __getitem__(self, *args): return _DTK_linux.QzonesResultvector___getitem__(self, *args)
-    def __setitem__(self, *args): return _DTK_linux.QzonesResultvector___setitem__(self, *args)
-    def append(self, *args): return _DTK_linux.QzonesResultvector_append(self, *args)
-    def empty(self): return _DTK_linux.QzonesResultvector_empty(self)
-    def size(self): return _DTK_linux.QzonesResultvector_size(self)
-    def clear(self): return _DTK_linux.QzonesResultvector_clear(self)
-    def swap(self, *args): return _DTK_linux.QzonesResultvector_swap(self, *args)
-    def get_allocator(self): return _DTK_linux.QzonesResultvector_get_allocator(self)
-    def begin(self): return _DTK_linux.QzonesResultvector_begin(self)
-    def end(self): return _DTK_linux.QzonesResultvector_end(self)
-    def rbegin(self): return _DTK_linux.QzonesResultvector_rbegin(self)
-    def rend(self): return _DTK_linux.QzonesResultvector_rend(self)
-    def pop_back(self): return _DTK_linux.QzonesResultvector_pop_back(self)
-    def erase(self, *args): return _DTK_linux.QzonesResultvector_erase(self, *args)
-    def __init__(self, *args): 
+
+    def iterator(self):
+        return _DTK_linux.QzonesResultvector_iterator(self)
+
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _DTK_linux.QzonesResultvector___nonzero__(self)
+
+    def __bool__(self):
+        return _DTK_linux.QzonesResultvector___bool__(self)
+
+    def __len__(self):
+        return _DTK_linux.QzonesResultvector___len__(self)
+
+    def pop(self):
+        return _DTK_linux.QzonesResultvector_pop(self)
+
+    def __getslice__(self, *args):
+        return _DTK_linux.QzonesResultvector___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        return _DTK_linux.QzonesResultvector___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        return _DTK_linux.QzonesResultvector___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        return _DTK_linux.QzonesResultvector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _DTK_linux.QzonesResultvector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _DTK_linux.QzonesResultvector___setitem__(self, *args)
+
+    def append(self, *args):
+        return _DTK_linux.QzonesResultvector_append(self, *args)
+
+    def empty(self):
+        return _DTK_linux.QzonesResultvector_empty(self)
+
+    def size(self):
+        return _DTK_linux.QzonesResultvector_size(self)
+
+    def clear(self):
+        return _DTK_linux.QzonesResultvector_clear(self)
+
+    def swap(self, *args):
+        return _DTK_linux.QzonesResultvector_swap(self, *args)
+
+    def get_allocator(self):
+        return _DTK_linux.QzonesResultvector_get_allocator(self)
+
+    def begin(self):
+        return _DTK_linux.QzonesResultvector_begin(self)
+
+    def end(self):
+        return _DTK_linux.QzonesResultvector_end(self)
+
+    def rbegin(self):
+        return _DTK_linux.QzonesResultvector_rbegin(self)
+
+    def rend(self):
+        return _DTK_linux.QzonesResultvector_rend(self)
+
+    def pop_back(self):
+        return _DTK_linux.QzonesResultvector_pop_back(self)
+
+    def erase(self, *args):
+        return _DTK_linux.QzonesResultvector_erase(self, *args)
+
+    def __init__(self, *args):
         this = _DTK_linux.new_QzonesResultvector(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def push_back(self, *args): return _DTK_linux.QzonesResultvector_push_back(self, *args)
-    def front(self): return _DTK_linux.QzonesResultvector_front(self)
-    def back(self): return _DTK_linux.QzonesResultvector_back(self)
-    def assign(self, *args): return _DTK_linux.QzonesResultvector_assign(self, *args)
-    def resize(self, *args): return _DTK_linux.QzonesResultvector_resize(self, *args)
-    def insert(self, *args): return _DTK_linux.QzonesResultvector_insert(self, *args)
-    def reserve(self, *args): return _DTK_linux.QzonesResultvector_reserve(self, *args)
-    def capacity(self): return _DTK_linux.QzonesResultvector_capacity(self)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def push_back(self, *args):
+        return _DTK_linux.QzonesResultvector_push_back(self, *args)
+
+    def front(self):
+        return _DTK_linux.QzonesResultvector_front(self)
+
+    def back(self):
+        return _DTK_linux.QzonesResultvector_back(self)
+
+    def assign(self, *args):
+        return _DTK_linux.QzonesResultvector_assign(self, *args)
+
+    def resize(self, *args):
+        return _DTK_linux.QzonesResultvector_resize(self, *args)
+
+    def insert(self, *args):
+        return _DTK_linux.QzonesResultvector_insert(self, *args)
+
+    def reserve(self, *args):
+        return _DTK_linux.QzonesResultvector_reserve(self, *args)
+
+    def capacity(self):
+        return _DTK_linux.QzonesResultvector_capacity(self)
+
     __swig_destroy__ = _DTK_linux.delete_QzonesResultvector
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 QzonesResultvector_swigregister = _DTK_linux.QzonesResultvector_swigregister
 QzonesResultvector_swigregister(QzonesResultvector)
+
 
 class PageoneResultVector(_object):
     __swig_setmethods__ = {}
@@ -504,44 +889,114 @@ class PageoneResultVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, PageoneResultVector, name)
     __repr__ = _swig_repr
-    def iterator(self): return _DTK_linux.PageoneResultVector_iterator(self)
-    def __iter__(self): return self.iterator()
-    def __nonzero__(self): return _DTK_linux.PageoneResultVector___nonzero__(self)
-    def __bool__(self): return _DTK_linux.PageoneResultVector___bool__(self)
-    def __len__(self): return _DTK_linux.PageoneResultVector___len__(self)
-    def pop(self): return _DTK_linux.PageoneResultVector_pop(self)
-    def __getslice__(self, *args): return _DTK_linux.PageoneResultVector___getslice__(self, *args)
-    def __setslice__(self, *args): return _DTK_linux.PageoneResultVector___setslice__(self, *args)
-    def __delslice__(self, *args): return _DTK_linux.PageoneResultVector___delslice__(self, *args)
-    def __delitem__(self, *args): return _DTK_linux.PageoneResultVector___delitem__(self, *args)
-    def __getitem__(self, *args): return _DTK_linux.PageoneResultVector___getitem__(self, *args)
-    def __setitem__(self, *args): return _DTK_linux.PageoneResultVector___setitem__(self, *args)
-    def append(self, *args): return _DTK_linux.PageoneResultVector_append(self, *args)
-    def empty(self): return _DTK_linux.PageoneResultVector_empty(self)
-    def size(self): return _DTK_linux.PageoneResultVector_size(self)
-    def clear(self): return _DTK_linux.PageoneResultVector_clear(self)
-    def swap(self, *args): return _DTK_linux.PageoneResultVector_swap(self, *args)
-    def get_allocator(self): return _DTK_linux.PageoneResultVector_get_allocator(self)
-    def begin(self): return _DTK_linux.PageoneResultVector_begin(self)
-    def end(self): return _DTK_linux.PageoneResultVector_end(self)
-    def rbegin(self): return _DTK_linux.PageoneResultVector_rbegin(self)
-    def rend(self): return _DTK_linux.PageoneResultVector_rend(self)
-    def pop_back(self): return _DTK_linux.PageoneResultVector_pop_back(self)
-    def erase(self, *args): return _DTK_linux.PageoneResultVector_erase(self, *args)
-    def __init__(self, *args): 
+
+    def iterator(self):
+        return _DTK_linux.PageoneResultVector_iterator(self)
+
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _DTK_linux.PageoneResultVector___nonzero__(self)
+
+    def __bool__(self):
+        return _DTK_linux.PageoneResultVector___bool__(self)
+
+    def __len__(self):
+        return _DTK_linux.PageoneResultVector___len__(self)
+
+    def pop(self):
+        return _DTK_linux.PageoneResultVector_pop(self)
+
+    def __getslice__(self, *args):
+        return _DTK_linux.PageoneResultVector___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        return _DTK_linux.PageoneResultVector___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        return _DTK_linux.PageoneResultVector___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        return _DTK_linux.PageoneResultVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _DTK_linux.PageoneResultVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _DTK_linux.PageoneResultVector___setitem__(self, *args)
+
+    def append(self, *args):
+        return _DTK_linux.PageoneResultVector_append(self, *args)
+
+    def empty(self):
+        return _DTK_linux.PageoneResultVector_empty(self)
+
+    def size(self):
+        return _DTK_linux.PageoneResultVector_size(self)
+
+    def clear(self):
+        return _DTK_linux.PageoneResultVector_clear(self)
+
+    def swap(self, *args):
+        return _DTK_linux.PageoneResultVector_swap(self, *args)
+
+    def get_allocator(self):
+        return _DTK_linux.PageoneResultVector_get_allocator(self)
+
+    def begin(self):
+        return _DTK_linux.PageoneResultVector_begin(self)
+
+    def end(self):
+        return _DTK_linux.PageoneResultVector_end(self)
+
+    def rbegin(self):
+        return _DTK_linux.PageoneResultVector_rbegin(self)
+
+    def rend(self):
+        return _DTK_linux.PageoneResultVector_rend(self)
+
+    def pop_back(self):
+        return _DTK_linux.PageoneResultVector_pop_back(self)
+
+    def erase(self, *args):
+        return _DTK_linux.PageoneResultVector_erase(self, *args)
+
+    def __init__(self, *args):
         this = _DTK_linux.new_PageoneResultVector(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def push_back(self, *args): return _DTK_linux.PageoneResultVector_push_back(self, *args)
-    def front(self): return _DTK_linux.PageoneResultVector_front(self)
-    def back(self): return _DTK_linux.PageoneResultVector_back(self)
-    def assign(self, *args): return _DTK_linux.PageoneResultVector_assign(self, *args)
-    def resize(self, *args): return _DTK_linux.PageoneResultVector_resize(self, *args)
-    def insert(self, *args): return _DTK_linux.PageoneResultVector_insert(self, *args)
-    def reserve(self, *args): return _DTK_linux.PageoneResultVector_reserve(self, *args)
-    def capacity(self): return _DTK_linux.PageoneResultVector_capacity(self)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def push_back(self, *args):
+        return _DTK_linux.PageoneResultVector_push_back(self, *args)
+
+    def front(self):
+        return _DTK_linux.PageoneResultVector_front(self)
+
+    def back(self):
+        return _DTK_linux.PageoneResultVector_back(self)
+
+    def assign(self, *args):
+        return _DTK_linux.PageoneResultVector_assign(self, *args)
+
+    def resize(self, *args):
+        return _DTK_linux.PageoneResultVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _DTK_linux.PageoneResultVector_insert(self, *args)
+
+    def reserve(self, *args):
+        return _DTK_linux.PageoneResultVector_reserve(self, *args)
+
+    def capacity(self):
+        return _DTK_linux.PageoneResultVector_capacity(self)
+
     __swig_destroy__ = _DTK_linux.delete_PageoneResultVector
-    __del__ = lambda self : None;
+    __del__ = lambda self: None;
+
+
 PageoneResultVector_swigregister = _DTK_linux.PageoneResultVector_swigregister
 PageoneResultVector_swigregister(PageoneResultVector)
 

@@ -313,6 +313,8 @@ def insert_result(handler, layout1, layout2, oss_data, qr_code):
                    handler.oss_img_path + oss_data['oss_key0'],
                    student_number, student_username, teacher_username, book_paper_id,
                    dis_page1, dis_details1, school_name, school_id, dis_flag1)
+    logging.critical('oss_key0 {}'.format(handler.oss_img_path + oss_data['oss_key0']))
+    logging.critical('oss_key1 {}'.format(handler.oss_img_path + oss_data['oss_key1']))
     logging.critical(u'save_scan_data successful: teacher:{} student:{} book_paper_id:{}'
                      .format(teacher_username, student_username, book_paper_id))
 
