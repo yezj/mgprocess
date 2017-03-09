@@ -62,6 +62,7 @@ def pick_oss(handler, key):
     key_another = key[:-5] + str(int(key[-5]) ^ 1) + '.jpg'
     tem_key = key[key.rfind('/')+1:]
     tem_key_another = key_another[key_another.rfind('/')+1:]
+    logging.critical('tem_key {} tem_key_another {}'.format(tem_key, tem_key_another))
     try:
         handler.bucket.get_object_to_file(key, tem_key)
         handler.bucket.get_object_to_file(key_another, tem_key_another)
