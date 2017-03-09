@@ -86,8 +86,10 @@ def pick_oss(handler, key):
     data['width1'] = img1.width
     data['raw_data0'] = img0.tostring()
     data['raw_data1'] = img1.tostring()
-    data['oss_key0'] = key_another
-    data['oss_key1'] = key
+    data['oss_key0'] = key
+    data['oss_key1'] = key_another
+    #data['oss_key0'] = key_another
+    #data['oss_key1'] = key
     os.remove(tem_key)
     os.remove(tem_key_another)
     logging.info('get oss success from key:{} and {}'.format(key, key_another))
@@ -313,8 +315,8 @@ def insert_result(handler, layout1, layout2, oss_data, qr_code):
                    handler.oss_img_path + oss_data['oss_key0'],
                    student_number, student_username, teacher_username, book_paper_id,
                    dis_page1, dis_details1, school_name, school_id, dis_flag1)
-    logging.critical('oss_key0 {}'.format(handler.oss_img_path + oss_data['oss_key0']))
-    logging.critical('oss_key1 {}'.format(handler.oss_img_path + oss_data['oss_key1']))
+    logging.critical('oss_key0 {}'.format(oss_data['oss_key0']))
+    logging.critical('oss_key1 {}'.format(oss_data['oss_key1']))
     logging.critical(u'save_scan_data successful: teacher:{} student:{} book_paper_id:{}'
                      .format(teacher_username, student_username, book_paper_id))
 
