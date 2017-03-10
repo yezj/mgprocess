@@ -2,8 +2,8 @@ import cv2
 import cv2.cv as cv
 from DTK_linux import init_CNN_model, getSegRecResult2
 
-img1 = cv2.cv.LoadImage('test2_0.jpg', 0)
-img2 = cv2.cv.LoadImage('test2_1.jpg', 0)
+img1 = cv2.cv.LoadImage('test0_0.jpg', 0)
+img2 = cv2.cv.LoadImage('test0_1.jpg', 0)
 height1 = img1.height
 width1 = img1.width
 
