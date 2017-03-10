@@ -88,7 +88,7 @@ class MNSReader(object):
                 logging.critical(u'DTK:{}'.format(key))
                 qr_code = get_rec_Qrcode(self, oss_data)
                 logging.critical(u'qr_code DTK:{}'.format(qr_code))
-                i = DTK_linux.init_CNN_model("DTK.prototxt", "DTK.caffemodel", "DTK.binaryproto")
+                i = DTK_linux.init_CNN_model("DTK2.prototxt", "DTK2.caffemodel", "DTK.binaryproto")
                 logging.critical(u'load DTK:{}'.format(i))
                 json_info1, json_info2 = get_json_info(self, qr_code)
                 insert_result(self, json_info1, json_info2, oss_data, qr_code)
